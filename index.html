@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>Service Records</title></head>
+<body>
+  <h2>Service Records</h2>
+  <form method="POST" action="/add">
+    <input type="text" name="name" placeholder="Technician Name" required>
+    <input type="date" name="date" required>
+    <input type="text" name="status" placeholder="Status" required>
+    <button type="submit">Add Record</button>
+  </form>
+  <hr>
+  <ul>
+    {% for record in records %}
+      <li>{{ record[1] }} | {{ record[2] }} | {{ record[3] }}</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
